@@ -1,0 +1,156 @@
+:root {
+  --warna-dasar: #4e6c50;
+  --warna-kedua: #aa8b56;
+  --warna-text: #f0ebce;
+  --warna-text2: #c40c0c;
+  --warna-ketiga: #395144;
+}
+
+@font-face {
+  font-family: "meditative";
+  src: url(../fonts/Meditative.ttf);
+}
+
+@font-face {
+  font-family: "kaoly";
+  src: url(../fonts/Kaoly\ Demo-Regular.ttf);
+}
+
+@font-face {
+  font-family: "titania";
+  src: url(../fonts/Titania-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--warna-ketiga);
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: var(--warna-kedua);
+  padding: 0.7rem 7%;
+  text-decoration: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.header .logo-text {
+  padding-top: 0.5rem;
+  color: var(--warna-text);
+  margin-right: 30%;
+  font-family: "kaoly", sans-serif;
+  font-size: 1rem;
+}
+
+.header .logo-text span {
+  color: #c40c0c;
+  font-family: "kaoly", sans-serif;
+}
+
+.header .navbar-nav a {
+  padding-top: 0.5rem;
+  color: var(--warna-text);
+  display: inline-block;
+  font-size: 0.9rem;
+  margin: 0 0.6rem;
+  font-family: "meditative", sans-serif;
+}
+
+.header .navbar-nav a:hover {
+  color: #c40c0c;
+}
+
+.header .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.1rem;
+  border-bottom: 0.1rem solid var(--warna-ketiga);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.header .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.header .navbar-extra i {
+  color: var(--warna-text);
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+}
+
+.header .navbar-extra i:hover {
+  color: var(--warna-text2);
+}
+
+#hamburger {
+  display: none;
+}
+
+/* media queries */
+
+/* mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 53%;
+  }
+}
+/* table */
+@media (max-width: 768px) {
+  html {
+    font-size: 61%;
+  }
+
+  #hamburger {
+    display: inline-block;
+  }
+
+  .header .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--warna-text);
+    width: 20rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .header .navbar-nav.active {
+    right: 0;
+  }
+
+  .header .navbar-nav a {
+    color: var(--warna-ketiga);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+  }
+
+  .header .navbar-nav a:hover {
+    color: var(--warna-text2);
+  }
+
+  .header .navbar-nav a:hover::after {
+    transform: scaleX(0.3);
+  }
+}
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 85%;
+  }
+}
+/* desktop */
